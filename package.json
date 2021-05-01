@@ -1,0 +1,53 @@
+{
+  "name": "pathetic_geek-bot",
+  "version": "1.0.0",
+  "description": "Finally decided to sit down and make a discord bot the right way.",
+  "main": "./src/bot.ts",
+  "scripts": {
+    "dev": "ts-node-dev --respawn --transpile-only ./src/bot.ts",
+    "build": "tsc",
+    "lint": "eslint . --ext .ts,.tsx",
+    "lint:fix": "npm lint --fix",
+    "prettier": "prettier --check src/",
+    "prettier:fix": "prettier --write src/",
+    "verify": "npm prettier && npm lint",
+    "verify:fix": "npm prettier:fix && npm lint:fix"
+  },
+  "devDependencies": {
+    "@types/glob": "^7.1.3",
+    "@types/node": "^14.14.10",
+    "prettier": "^2.2.1",
+    "ts-node-dev": "^1.0.0-pre.49",
+    "tslib": "^2.0.3",
+    "tslint-config-fire": "^1.0.1",
+    "typescript": "^4.1.2"
+  },
+  "dependencies": {
+    "@types/common-tags": "^1.8.0",
+    "common-tags": "^1.8.0",
+    "discord.js": "^12.5.1",
+    "glob": "^7.1.6"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm prettier",
+      "pre-push": "npm verify"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/patheticGeek/pathetic_geek-bot.git"
+  },
+  "keywords": [
+    "bot",
+    "discord",
+    "typescript",
+    "discord.js"
+  ],
+  "author": "pathetic_geek",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/patheticGeek/pathetic_geek-bot/issues"
+  },
+  "homepage": "https://github.com/patheticGeek/pathetic_geek-bot#readme"
+}
