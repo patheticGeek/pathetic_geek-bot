@@ -7,7 +7,8 @@ abstract class SetupCommand extends Command {
       name: "setup",
       aliases: ["s"],
       description: "Setup a channel for join to create",
-      userPermissions: ["ADMINISTRATOR"]
+      userPermissions: ["ADMINISTRATOR"],
+      clientPermissions: ["MANAGE_CHANNELS"]
     });
   }
 

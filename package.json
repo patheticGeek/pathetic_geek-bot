@@ -2,9 +2,9 @@
   "name": "pathetic_geek-bot",
   "version": "1.0.0",
   "description": "Finally decided to sit down and make a discord bot the right way.",
-  "main": "./src/bot.ts",
+  "main": "./src/index.ts",
   "scripts": {
-    "dev": "ts-node-dev --respawn --transpile-only ./src/bot.ts",
+    "dev": "ts-node-dev --respawn --transpile-only ./src/index.ts",
     "build": "tsc",
     "lint": "eslint . --ext .ts,.tsx",
     "lint:fix": "npm lint --fix",
