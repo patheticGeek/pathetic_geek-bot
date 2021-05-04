@@ -26,7 +26,9 @@
     "@types/common-tags": "^1.8.0",
     "common-tags": "^1.8.0",
     "discord.js": "^12.5.1",
-    "glob": "^7.1.6"
+    "glob": "^7.1.6",
+    "sequelize": "^6.6.2",
+    "sqlite3": "^5.0.2"
   },
   "husky": {
     "hooks": {

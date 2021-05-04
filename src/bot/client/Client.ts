@@ -2,9 +2,11 @@ import { Client, Collection } from "discord.js";
 import { CommandRegistry, EventRegistry } from "../struct/registries/export/RegistryIndex";
 import { CommandOptions, EventOptions } from "../types/Options";
 import settings from "../settings";
+import db from "../../models/index";
 
 class Bot extends Client {
   public prefix: string;
+  public db;
 
   public commands = new Collection<string, CommandOptions>();
 
@@ -19,6 +21,7 @@ class Bot extends Client {
     });
 
     this.prefix = settings.PREFIX;
+    this.db = db;
   }
 
   public start() {
