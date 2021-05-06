@@ -1,0 +1,9 @@
+.git
+.gitignore
+.gitattributes
+.prettierrc
+LICENSE
+readme.md
+setting_up_docker.md
+tslint.json
+.env
