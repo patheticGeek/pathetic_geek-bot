@@ -1,6 +1,7 @@
 import { DataTypes, Sequelize, Model } from "sequelize";
 
 interface ChannelsByMeAttributes {
+  userID: string;
   serverID: string;
   channelID: string;
   id: string;
@@ -18,6 +19,9 @@ export default (sequelize: Sequelize) => {
       type: DataTypes.STRING
     },
     channelID: {
+      type: DataTypes.STRING
+    },
+    userID: {
       type: DataTypes.STRING
     }
   });
