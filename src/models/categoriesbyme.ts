@@ -1,16 +1,17 @@
 import { DataTypes, Sequelize, Model } from "sequelize";
 
-interface ChannelsByMeAttributes {
-  userID: string;
+interface CategoriesByMeAttributes {
+  name: string;
   serverID: string;
   channelID: string;
   id: string;
+  userID: string;
 }
 
-interface ChannelsByMeInstance extends Model<ChannelsByMeAttributes>, ChannelsByMeAttributes {}
+interface CategoriesByMeInstance extends Model<CategoriesByMeAttributes>, CategoriesByMeAttributes {}
 
 export default (sequelize: Sequelize) => {
-  const ChannelsByMeModel = sequelize.define<ChannelsByMeInstance>("ChannelsByMe", {
+  const CategoriesByMeModel = sequelize.define<CategoriesByMeInstance>("CategoriesByMe", {
     id: {
       primaryKey: true,
       type: DataTypes.STRING
@@ -20,12 +21,14 @@ export default (sequelize: Sequelize) => {
     },
     channelID: {
       type: DataTypes.STRING
-    },
+    }, name: {
+      type: DataTypes.STRING
+    }, 
     userID: {
       type: DataTypes.STRING
     }
   });
-  ChannelsByMeModel.sync();
+  CategoriesByMeModel.sync();
 
-  return ChannelsByMeModel;
+  return CategoriesByMeModel;
 };
