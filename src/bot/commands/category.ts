@@ -62,7 +62,21 @@ abstract class CategoryCommand extends Command {
   }
 
   async anhilate(message: Message) {
+    const intr = message.content.split(' ');
+    intr.splice(0, 2);
+    const categoryName = intr.join(' ');
+    const destroyedCategories = await this.client.db.CategoriesByMeModel.destroy({ where: { name: categoryName } });
+    if(destroyedCategories > 0) {
+      return message.reply("Category deleted!");
+    } else {
+      return message.reply("No such category");
+    }
+  }
 
+  async list(message: Message) {
+    const categories = await this.client.db.CategoriesByMeModel.findAll({ where: { serverID: message.guild?.id } });
+    const reply = `*Channels in this server:*\n${categories.map(category => `${category.name}`).join('\n')}`
+    return message.reply(reply);
   }
 }
 
