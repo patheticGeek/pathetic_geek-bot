@@ -2,13 +2,14 @@ import { Sequelize } from "sequelize";
 import WatchingVoiceChannel from "./watchingvoicechannel";
 import ChannelsByMe from "./channelsbyme";
 import CategoriesByMe from "./categoriesbyme";
+import config from '../config';
 const env = process.env.NODE_ENV || "development";
-const config = require(__dirname + "/../config/config.json");
 let sequelize = new Sequelize("sqlite::memory:", { logging: false });
 
 if (config.use_in_memory) {
   sequelize = new Sequelize("sqlite::memory:", { logging: false });
 } else {
+  // @ts-ignore
   const currentConfig = config[env];
   sequelize = new Sequelize(currentConfig.database, currentConfig.username, currentConfig.password, currentConfig);
 }

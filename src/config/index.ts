@@ -1,4 +1,4 @@
-{
+export default {
   "use_in_memory": true,
   "development": {
     "username": "root",
