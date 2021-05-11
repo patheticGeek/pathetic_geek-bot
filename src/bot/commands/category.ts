@@ -25,7 +25,7 @@ abstract class CategoryCommand extends Command {
   }
 
   async create(message: Message) {
-    if(message.member?.permissions.missing('MANAGE_CHANNELS')) {
+    if((message.member?.permissions.missing('MANAGE_CHANNELS') || []).length > 0) {
       return message.reply('You need to have MANAGE_CHANNELS permission')
     }
     const intr = message.content.split(' ');
@@ -45,7 +45,7 @@ abstract class CategoryCommand extends Command {
     if(!voiceChannelData) {
       return message.reply("You're in a VC that wasn't created by me");
     }
-    if(voiceChannelData.userID !== message.member.id && message.member.permissions.missing('MANAGE_CHANNELS')) {
+    if(voiceChannelData.userID !== message.member.id && message.member.permissions.missing('MANAGE_CHANNELS').length > 0) {
       return message.reply("Only the creator can move channel");
     }
     const intr = message.content.split(' ');
