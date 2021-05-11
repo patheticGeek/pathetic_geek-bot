@@ -1,13 +1,15 @@
-FROM node:14
+FROM node:15
 
 WORKDIR /app
 
 COPY package.json .
 
-RUN npm install
+RUN npm i -g pnpm
+
+RUN pnpm install
 
 COPY . .
 
-RUN npm run build
+RUN pnpm run build
 
-CMD ["npm", "run", "dev"]
+CMD ["pnpm", "run", "start"]
