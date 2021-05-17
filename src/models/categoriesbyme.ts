@@ -21,9 +21,10 @@ export default (sequelize: Sequelize) => {
     },
     channelID: {
       type: DataTypes.STRING
-    }, name: {
+    },
+    name: {
       type: DataTypes.STRING
-    }, 
+    },
     userID: {
       type: DataTypes.STRING
     }
