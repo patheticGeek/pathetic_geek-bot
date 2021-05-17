@@ -4,7 +4,7 @@ import { sync } from "glob";
 import { resolve } from "path";
 
 const registerEvents: Function = (client: Bot) => {
-  const pattren = process.env.NODE_ENV === 'production' ? "dist/bot/events/**/*" : "src/bot/events/**/*"
+  const pattren = process.env.NODE_ENV === "production" ? "dist/bot/events/**/*" : "src/bot/events/**/*";
   const eventFiles = sync(resolve(pattren));
   eventFiles.forEach((file) => {
     if (/\.(j|t)s$/iu.test(file)) {

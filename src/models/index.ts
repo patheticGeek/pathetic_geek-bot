@@ -2,7 +2,7 @@ import { Sequelize } from "sequelize";
 import WatchingVoiceChannel from "./watchingvoicechannel";
 import ChannelsByMe from "./channelsbyme";
 import CategoriesByMe from "./categoriesbyme";
-import config from '../config';
+import config from "../config";
 const env = process.env.NODE_ENV || "development";
 let sequelize = new Sequelize("sqlite::memory:", { logging: false });
 
