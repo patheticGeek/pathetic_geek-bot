@@ -4,6 +4,7 @@
   "description": "Finally decided to sit down and make a discord bot the right way.",
   "main": "./src/index.ts",
   "scripts": {
+    "start": "NODE_ENV=production node dist/index.js",
     "dev": "ts-node-dev --respawn --transpile-only ./src/index.ts",
     "build": "tsc",
     "lint": "eslint . --ext .ts,.tsx",
