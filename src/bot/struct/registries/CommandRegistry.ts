@@ -4,8 +4,8 @@ import { sync } from "glob";
 import { resolve } from "path";
 
 const registerCommands: Function = (client: Bot) => {
-  const pattren = process.env.NODE_ENV === "production" ? "dist/bot/commands/**/*" : "src/bot/commands/**/*";
-  const commandFiles = sync(resolve(pattren));
+  const pattern = process.env.NODE_ENV === "production" ? "dist/bot/commands/**/*" : "src/bot/commands/**/*";
+  const commandFiles = sync(resolve(pattern));
   commandFiles.forEach((file) => {
     if (/\.(j|t)s$/iu.test(file)) {
       const File = require(file).default;
