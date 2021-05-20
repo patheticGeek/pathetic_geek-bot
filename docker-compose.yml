@@ -1,7 +1,7 @@
 version : "3"
 services :
     bot :
-        container_name: "bot"
+        container_name: "pathetic-geek_bot"
         build: 
             context: .
             dockerfile: "./Dockerfile"
