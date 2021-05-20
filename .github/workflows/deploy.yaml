@@ -15,7 +15,7 @@ jobs:
           key: ${{ secrets.SERVER_SECRET }}
           port: 22
           script: |
-            cd pathetic_geek-bot
+            cd pathetic-geek_bot
             git pull origin master
             git status
             docker-compose down
